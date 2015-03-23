@@ -48,10 +48,6 @@
 				</section>
 
 				<section>
-					<h2>Magic</h2>
-				</section>
-
-				<section>
 					<h2>Modules</h2>
 					<div>
 						<img src="img/webpack_title.png" />
@@ -61,50 +57,16 @@
 					</div>
 				</section>
 
-				<section>
-					<h2>Modules</h2>
-					<div>
-						<p>CSS - Images - JS
-							<pre><code data-trim contenteditable>
-var CSS - require(‘css!./file.css’);
-var Image - require(‘image!./file.png’);
-var JS - require(‘babel!./file.js’);
-							</pre></code>
-						</p>
-					</div>
-				</section>
-
-				<section>
-					<h2>Modules</h2>
-					<div>
-						<p>Load a file on-demand or load with a promise
-							<pre><code data-trim contenteditable>
-var onDemand - require.ensure([“mod-a”], function(require) {
-  var mod-a = require(‘mod-a’);
-});
-var Promise - require(‘promise?es6-promise!./file.js’);
-
-							</pre></code>
-						</p>
-					</div>
-				</section>
-
         <section>
           <h2>Configuration</h2>
           <div>
             <ul>
               <li>Concat/Minify many files into a single AMD/UMD/CommonJS file</li>
+              <li>Loaders</li>
               <li>Entry Points and code-splitting/chunks</li>
-              <li>Loading Chunks on-demand (require.ensure)</li>
-              <li>Use with grunt/npm/gulp/karma
-                <ul>
-                  <li>Pass webpack.config.js</li>    
-                </ul>
-              </li>
             </ul>
           </div>
         </section>
-
 
         <section>
           <h2>Configuration</h2>
@@ -112,21 +74,32 @@ var Promise - require(‘promise?es6-promise!./file.js’);
             <p>webpack.config.js
               <pre><code data-trim contenteditable>
 ...
+entry: {
+  App: './app/index.js'
+}
+...
 output: {
   path: 'public/js',
   filename: '[name].js',
-  publicPath: 'js',
   libraryTarget: 'amd'
 }
 ...
-entry: {
-  App: ['./app/index.js']
-}
 </pre></code>
             </p>
           </div>
         </section>
 
+          <section>
+          <h2>Modules</h2>
+          <div>
+            <p>CSS - Images
+              <pre><code data-trim contenteditable>
+var CSS = require(‘css!./file.css’);
+var Image = require(‘image!./file.png’);
+              </pre></code>
+            </p>
+          </div>
+        </section>
 
         <section>
           <h2>Configuration</h2>
@@ -146,6 +119,9 @@ loaders: [
             </p>
           </div>
         </section>
+        
+
+
 
         <section>
           <h2>Webpack Dev Server</h2>
@@ -154,7 +130,6 @@ loaders: [
               <li>Serves assets</li>
               <li>Enables live reload in the browser</li>
               <li>Caches chunks on rebuilds</li>
-              <li>Talks to webpage with socket.io</li>
             </ul>
           </div>
         </section>
@@ -168,7 +143,6 @@ loaders: [
               <ul>
                 <li>no refreshing and falling back to refresh</li>
               </ul>
-              <li>rebuilt modules are injected dynamically</li>
               <li>React-hot-loader</li>
               <ul>
                 <li>Live edit your React application</li>
