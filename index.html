@@ -63,7 +63,16 @@
             <ul>
               <li>Concat/Minify many files into a single AMD/UMD/CommonJS file</li>
               <li>Loaders</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Configuration</h2>
+          <div>
+            <ul>
               <li>Entry Points and code-splitting/chunks</li>
+              <li>Load code on-demand</li>
             </ul>
           </div>
         </section>
@@ -92,7 +101,7 @@ output: {
           <section>
           <h2>Modules</h2>
           <div>
-            <p>CSS - Images
+            <p>CSS, Images, etc.
               <pre><code data-trim contenteditable>
 var CSS = require(‘css!./file.css’);
 var Image = require(‘image!./file.png’);
@@ -109,9 +118,9 @@ var Image = require(‘image!./file.png’);
 ...                
 loaders: [
   { 
-    test: /\.js$/, 
+    test: /\.coffee$/, 
     exclude: /node_modules/, 
-    loader: 'babel-loader?experimental&optional=runtime'
+    loader: 'coffee-loader'
   }
 ]
 ...
@@ -119,9 +128,6 @@ loaders: [
             </p>
           </div>
         </section>
-        
-
-
 
         <section>
           <h2>Webpack Dev Server</h2>
@@ -152,8 +158,12 @@ loaders: [
 
         <section>
           <h2>Thanks</h2>
+          <ul>
+            <li><a href="http://webpack.github.io/">webpack.github.io</a></li>
+            <li><a href="http://timerqueue.herokuapp.com/#/">Timer Queue (Example)</a></li>
+          </ul>
           <p>
-            <a href="http://twitter.com/songawee">@songawee</a>
+            <a href="http://twitter.com/songawee">@songawee</a> - github/twitter
           </p>
         </section>
 
